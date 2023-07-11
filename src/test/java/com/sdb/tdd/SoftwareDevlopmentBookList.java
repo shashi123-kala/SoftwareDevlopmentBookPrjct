@@ -25,4 +25,10 @@ public class SoftwareDevlopmentBookList {
 		return book;
 	}
 
+	public static SoftwareDevelopmentBook GivenASoftwareDevelopmentVBook() {
+		SoftwareDevelopmentBook book = new SoftwareDevelopmentBook(
+				"Working Effectively With Legacy Code (Michael C. Feathers, 2004)");
+		return book;
+	}
+
 }
