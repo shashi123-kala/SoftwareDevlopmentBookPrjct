@@ -210,4 +210,29 @@ public class CalculateDiscountTest {
 		assertEquals(360.0, calculateDiscount.getTotalPrice());
 	}
 
+	@Test
+	public void buyingThreeCpyOfTwoDifftBookWithTwoCopsOfoneBook() {
+		SoftwareDevlopmentBookEnum enumBookI = SoftwareDevlopmentBookEnum.SOFTWARE_DEVELOPMENT_BOOKI;
+		SoftwareDevlopmentBookEnum enumBookII = SoftwareDevlopmentBookEnum.SOFTWARE_DEVELOPMENT_BOOKII;
+		SoftwareDevlopmentBookEnum enumBookIII = SoftwareDevlopmentBookEnum.SOFTWARE_DEVELOPMENT_BOOKIII;
+
+		SoftwareDevelopmentBook sdbFirstI = new SoftwareDevelopmentBook(enumBookI.getName());
+		SoftwareDevelopmentBook sdbFirstII = new SoftwareDevelopmentBook(enumBookI.getName());
+		SoftwareDevelopmentBook sdbFirstIII = new SoftwareDevelopmentBook(enumBookI.getName());
+		SoftwareDevelopmentBook sdbSecI = new SoftwareDevelopmentBook(enumBookII.getName());
+		SoftwareDevelopmentBook sdbSecII = new SoftwareDevelopmentBook(enumBookII.getName());
+		SoftwareDevelopmentBook sdbSecIII = new SoftwareDevelopmentBook(enumBookII.getName());
+		SoftwareDevelopmentBook sdbThirdI = new SoftwareDevelopmentBook(enumBookIII.getName());
+		SoftwareDevelopmentBook sdbThirdII = new SoftwareDevelopmentBook(enumBookIII.getName());
+		calculateDiscount.Add(sdbFirstI);
+		calculateDiscount.Add(sdbFirstII);
+		calculateDiscount.Add(sdbFirstIII);
+		calculateDiscount.Add(sdbSecI);
+		calculateDiscount.Add(sdbSecII);
+		calculateDiscount.Add(sdbSecIII);
+		calculateDiscount.Add(sdbThirdI);
+		calculateDiscount.Add(sdbThirdII);
+		assertEquals(365.00, calculateDiscount.getTotalPrice());
+	}
+
 }
