@@ -15,14 +15,18 @@ import com.sdb.entity.SoftwareDevelopmentBookSetDiscount;
 public class CalculateDiscountTest {
 
 	CalculateDiscount calculateDiscount;
+	public static final int FIVE_PERCENT_DISCOUNT = 5;
+	public static final int TEN_PERCENT_DISCOUNT = 10;
+	public static final int TWENTY_PERCENT_DISCOUNT = 20;
+	public static final int TWENTY_FIVE_PERCENT_DISCOUNT = 25;
 
 	@BeforeEach
 	public void setup() {
 		List<SoftwareDevelopmentBookSetDiscount> byDifferentCopiesDiscountList = new ArrayList<>();
-		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(2, 5));
-		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(3, 10));
-		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(4, 20));
-		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(5, 25));
+		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(2, FIVE_PERCENT_DISCOUNT));
+		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(3, TEN_PERCENT_DISCOUNT));
+		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(4, TWENTY_PERCENT_DISCOUNT));
+		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(5, TWENTY_FIVE_PERCENT_DISCOUNT));
 		calculateDiscount = new CalculateDiscount(byDifferentCopiesDiscountList);
 	}
 
