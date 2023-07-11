@@ -14,7 +14,7 @@ import com.sdb.entity.SoftwareDevelopmentBookSetDiscount;
 
 public class CalculateDiscountTest {
 
-	CalculateDiscount calculateDiscount = new CalculateDiscount();
+	CalculateDiscount calculateDiscount;
 
 	@BeforeEach
 	public void setup() {
@@ -23,6 +23,7 @@ public class CalculateDiscountTest {
 		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(3, 10));
 		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(4, 20));
 		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(5, 25));
+		calculateDiscount = new CalculateDiscount(byDifferentCopiesDiscountList);
 	}
 
 	@Test
@@ -33,7 +34,17 @@ public class CalculateDiscountTest {
 	@Test
 	public void buyingOneBook() {
 		SoftwareDevelopmentBook sdbFirstI = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIBook();
+		calculateDiscount.Add(sdbFirstI);
 		assertEquals(50.0, calculateDiscount.getTotalPrice());
+	}
+
+	@Test
+	public void buyingTwoCopiesOfDifferentBook() {
+		SoftwareDevelopmentBook sdbFirstI = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIBook();
+		SoftwareDevelopmentBook sdbSecondI = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIIBook();
+		calculateDiscount.Add(sdbFirstI);
+		calculateDiscount.Add(sdbSecondI);
+		assertEquals(95.0, calculateDiscount.getTotalPrice());
 	}
 
 }
