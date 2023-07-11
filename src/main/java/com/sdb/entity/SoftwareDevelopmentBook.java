@@ -4,9 +4,9 @@ public class SoftwareDevelopmentBook {
 	private String title;
 	private int price;
 
-	public SoftwareDevelopmentBook(String title, int price) {
+	public SoftwareDevelopmentBook(String title) {
 		this.title = title;
-		this.price = price;
+		this.price = 50;
 	}
 
 	public String getTitle() {
