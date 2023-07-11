@@ -19,14 +19,18 @@ public class CalculateDiscountTest {
 	public static final int TEN_PERCENT_DISCOUNT = 10;
 	public static final int TWENTY_PERCENT_DISCOUNT = 20;
 	public static final int TWENTY_FIVE_PERCENT_DISCOUNT = 25;
+	public static final int TWO_BOOKS = 2;
+	public static final int THREE_BOOKS = 3;
+	public static final int FOUR_BOOKS = 4;
+	public static final int FIVE_BOOKS = 5;
 
 	@BeforeEach
 	public void setup() {
 		List<SoftwareDevelopmentBookSetDiscount> byDifferentCopiesDiscountList = new ArrayList<>();
-		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(2, FIVE_PERCENT_DISCOUNT));
-		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(3, TEN_PERCENT_DISCOUNT));
-		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(4, TWENTY_PERCENT_DISCOUNT));
-		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(5, TWENTY_FIVE_PERCENT_DISCOUNT));
+		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(TWO_BOOKS, FIVE_PERCENT_DISCOUNT));
+		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(THREE_BOOKS, TEN_PERCENT_DISCOUNT));
+		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(FOUR_BOOKS, TWENTY_PERCENT_DISCOUNT));
+		byDifferentCopiesDiscountList.add(new SoftwareDevelopmentBookSetDiscount(FIVE_BOOKS, TWENTY_FIVE_PERCENT_DISCOUNT));
 		calculateDiscount = new CalculateDiscount(byDifferentCopiesDiscountList);
 	}
 
