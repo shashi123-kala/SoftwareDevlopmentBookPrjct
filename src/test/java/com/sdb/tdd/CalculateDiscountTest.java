@@ -185,4 +185,29 @@ public class CalculateDiscountTest {
 		assertEquals(380.00, calculateDiscount.getTotalPrice());
 	}
 
+	public void buyingFiveCpyOfOneBookWithOneCpyOfThreeDifftBook() {
+		SoftwareDevlopmentBookEnum enumBookI = SoftwareDevlopmentBookEnum.SOFTWARE_DEVELOPMENT_BOOKI;
+		SoftwareDevlopmentBookEnum enumBookII = SoftwareDevlopmentBookEnum.SOFTWARE_DEVELOPMENT_BOOKII;
+		SoftwareDevlopmentBookEnum enumBookIII = SoftwareDevlopmentBookEnum.SOFTWARE_DEVELOPMENT_BOOKIII;
+		SoftwareDevlopmentBookEnum enumBookIV = SoftwareDevlopmentBookEnum.SOFTWARE_DEVELOPMENT_BOOKIV;
+
+		SoftwareDevelopmentBook sdbFirstI = new SoftwareDevelopmentBook(enumBookI.getName());
+		SoftwareDevelopmentBook sdbFirstII = new SoftwareDevelopmentBook(enumBookI.getName());
+		SoftwareDevelopmentBook sdbFirstIII = new SoftwareDevelopmentBook(enumBookI.getName());
+		SoftwareDevelopmentBook sdbFirstIV = new SoftwareDevelopmentBook(enumBookI.getName());
+		SoftwareDevelopmentBook sdbFirstV = new SoftwareDevelopmentBook(enumBookI.getName());
+		SoftwareDevelopmentBook sdbSecondI = new SoftwareDevelopmentBook(enumBookII.getName());
+		SoftwareDevelopmentBook sdbThirdI = new SoftwareDevelopmentBook(enumBookIII.getName());
+		SoftwareDevelopmentBook sdbFourthI = new SoftwareDevelopmentBook(enumBookIV.getName());
+		calculateDiscount.Add(sdbFirstI);
+		calculateDiscount.Add(sdbFirstII);
+		calculateDiscount.Add(sdbFirstIII);
+		calculateDiscount.Add(sdbFirstIV);
+		calculateDiscount.Add(sdbFirstV);
+		calculateDiscount.Add(sdbSecondI);
+		calculateDiscount.Add(sdbThirdI);
+		calculateDiscount.Add(sdbFourthI);
+		assertEquals(360.0, calculateDiscount.getTotalPrice());
+	}
+
 }
