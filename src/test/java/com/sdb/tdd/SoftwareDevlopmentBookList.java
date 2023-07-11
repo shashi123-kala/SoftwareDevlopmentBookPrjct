@@ -19,4 +19,10 @@ public class SoftwareDevlopmentBookList {
 		return book;
 	}
 
+	public static SoftwareDevelopmentBook GivenASoftwareDevelopmentIVBook() {
+		SoftwareDevelopmentBook book = new SoftwareDevelopmentBook(
+				"Test Driven Development by Example (Kent Beck, 2003)");
+		return book;
+	}
+
 }
